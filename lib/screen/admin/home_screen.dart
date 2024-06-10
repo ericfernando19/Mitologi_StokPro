@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:stok_barang/config/asset.dart';
+import 'package:stok_barang/screen/admin/list_barang.dart';
 
 void main() {
   runApp(const HomeScreen());
@@ -35,6 +36,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Map> _fragment = [
+    {'title': 'Data Barang', 'view': ListBarang()},
+  ];
+
+  void _navigateToTambahBarang() {
+    // Tambahkan navigasi ke halaman Tambah Barang di sini
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+              ListBarang()), // Ganti dengan halaman yang sesuai
+    );
+  }
+
+  void _navigateToBarangMasuk() {
+    // Tambahkan navigasi ke halaman Barang Masuk di sini
+  }
+
+  void _navigateToBarangKeluar() {
+    // Tambahkan navigasi ke halaman Barang Keluar di sini
+  }
+
+  void _navigateToInfo() {
+    // Tambahkan navigasi ke halaman Info di sini
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -217,12 +244,14 @@ class _HomePageState extends State<HomePage> {
                           icon: '../asset/images/tambah.png',
                           color: const Color.fromARGB(255, 79, 210, 84),
                           fontColor: Colors.black,
+                          onTap: _navigateToTambahBarang,
                         ),
                         _cardMenu(
                           title: 'Barang Masuk',
                           icon: '../asset/images/masuk.png',
                           color: const Color.fromARGB(255, 79, 210, 84),
                           fontColor: Colors.black,
+                          onTap: _navigateToBarangMasuk,
                         ),
                       ],
                     ),
@@ -235,12 +264,14 @@ class _HomePageState extends State<HomePage> {
                           icon: '../asset/images/keluar.png',
                           color: const Color.fromARGB(255, 79, 210, 84),
                           fontColor: Colors.black,
+                          onTap: _navigateToBarangKeluar,
                         ),
                         _cardMenu(
                           title: 'Info',
                           icon: '../asset/images/info1.png',
                           color: const Color.fromARGB(255, 79, 210, 84),
                           fontColor: Colors.black,
+                          onTap: _navigateToInfo,
                         ),
                       ],
                     ),
@@ -280,7 +311,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _cardMenu({
     required String title,
-    required String icon, // Change the parameter type to String
+    required String icon,
     VoidCallback? onTap,
     Color color = Colors.white,
     Color fontColor = Colors.grey,
