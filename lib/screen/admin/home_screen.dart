@@ -1,7 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:stok_barang/config/asset.dart';
+import 'package:stok_barang/screen/admin/barang_keluar.dart';
 import 'package:stok_barang/screen/admin/list_barang.dart';
+
+import 'barang_masuk.dart';
+import 'info.dart';
+import 'notif.dart';
+import 'profle.dart';
 
 void main() {
   runApp(const HomeScreen());
@@ -51,15 +57,29 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigateToBarangMasuk() {
-    // Tambahkan navigasi ke halaman Barang Masuk di sini
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+              BarangMasuk()), // Ganti dengan halaman yang sesuai
+    ); // Tambahkan navigasi ke halaman Barang Masuk di sini
   }
 
   void _navigateToBarangKeluar() {
-    // Tambahkan navigasi ke halaman Barang Keluar di sini
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+              BarangKeluar()), // Ganti dengan halaman yang sesuai
+    ); // Tambahkan navigasi ke halaman Barang Keluar di sini
   }
 
   void _navigateToInfo() {
-    // Tambahkan navigasi ke halaman Info di sini
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => Info()), // Ganti dengan halaman yang sesuai
+    ); // Tambahkan navigasi ke halaman Info di sini
   }
 
   @override
@@ -76,7 +96,12 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      // Tambahkan aksi yang ingin dilakukan saat ikon orang diklik
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ProfilePage()), // Ganti dengan halaman yang sesuai
+                      ); // Tambahkan aksi yang ingin dilakukan saat ikon orang diklik
                     },
                     icon: Icon(
                       Icons.person,
@@ -94,7 +119,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                   IconButton(
                     onPressed: () {
-                      // Tambahkan aksi yang ingin dilakukan saat ikon orang diklik
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                NotificationPage()), // Ganti dengan halaman yang sesuai
+                      ); // Tambahkan aksi yang ingin dilakukan saat ikon orang diklik
                     },
                     icon: Icon(
                       Icons.notifications,
